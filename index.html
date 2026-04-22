@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Update</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img id="bg-gif" src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3M2N0M3Rianc3NGMyaWszYXBta2szbWFoNW92NTNkc2JqbGFqbmt3eSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/uvA9bmS8ZGbbrsCAtp/giphy.gif" alt="weather background">
+  <div class="overlay"></div>
+
+  <div class="app">
+
+    <header class="header">
+      <span class="header-icon">&#9729;</span>
+      <h1 class="header-title">Weather Update</h1>
+    </header>
+
+    <div class="search-wrap">
+      <input id="city-input" type="text" placeholder="Search city..." autocomplete="off" spellcheck="false">
+      <button class="btn-view" onclick="fetchWeather()">View</button>
+      <button class="btn-reset" onclick="resetApp()">Reset</button>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="loading-text">Fetching weather...</span>
+    </div>
+
+    <div id="error-box" class="error-box hidden"></div>
+
+    <div id="weather-card" class="weather-card hidden">
+      <div class="card-top">
+        <div class="city-name" id="w-city"></div>
+        <div class="badge" id="w-badge"></div>
+      </div>
+      <div class="icon-wrap" id="w-icon"></div>
+      <div class="big-temp" id="w-temp"></div>
+      <div class="desc" id="w-desc"></div>
+      <div class="divider"></div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">Feels like</div>
+          <div class="stat-val" id="w-feels"></div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Humidity</div>
+          <div class="stat-val" id="w-humidity"></div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Wind speed</div>
+          <div class="stat-val" id="w-wind"></div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Visibility</div>
+          <div class="stat-val" id="w-vis"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
